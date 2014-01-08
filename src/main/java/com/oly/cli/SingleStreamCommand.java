@@ -15,7 +15,7 @@ public  class SingleStreamCommand extends TweetStreamCommand{
     @SuppressWarnings("unchecked")
     public void run() {
         Observable<Status> statusObservable = StreamUtils.createObservableStream(parseCredentials().get(0));
-        StreamUtils.createThrouputObersvable(statusObservable).subscribe(throughputObserver);
+        StreamUtils.createThroughputObservable(statusObservable).subscribe(throughputObserver);
     }
 }
 

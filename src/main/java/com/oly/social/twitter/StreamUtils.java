@@ -22,7 +22,7 @@ import java.util.concurrent.TimeUnit;
 public class StreamUtils {
 
 
-    public static Observable<Integer> createThrouputObersvable(Observable<Status> statusObservable){
+    public static Observable<Integer> createThroughputObservable(Observable<Status> statusObservable){
          return statusObservable.buffer(1, TimeUnit.SECONDS).map(new Func1<List<Status>, Integer>() {
             @Override
             public Integer call(List<Status> statuses) {

@@ -31,6 +31,6 @@ public class MergingStreamCommand extends TweetStreamCommand {
         if (dropDuplicates)
             mergedObservable = mergedObservable.distinct();
 
-        StreamUtils.createThrouputObersvable(mergedObservable).subscribe(throughputObserver);
+        StreamUtils.createThroughputObservable(mergedObservable).subscribe(throughputObserver);
     }
 }
