@@ -1,1 +1,49 @@
-This file was created by IntelliJ IDEA 12.1.4 for binding GitHub repository
+twitter-sample-reactive
+=======
+
+twitter-sample-reactive is an experiment to see if merging different twitter random sample streams gives more throughput (tweets per second) than a single random sample stream.
+
+Answer: You do not get increased throughput by merging different random samples, Twitter gives same random sample to everyone.
+
+
+How to run:-
+
+Populate  src/main/resources/twitter_credentials.yaml   file with some twitter credentials. For merging multiple stream you need more than 1 account as you cannot open more than 1 stream per account.
+
+
+mvn clean compile package
+
+
+To all options
+
+java -jar target/twitter-sample-reactive-0.1.jar
+
+
+To view help
+java -jar target/twitter-sample-reactive-0.1.jar    help single
+java -jar target/twitter-sample-reactive-0.1.jar    help merge
+
+
+To run a single stream :
+
+java -jar target/twitter-sample-reactive-0.1.jar -c twitter_credentials.yaml single
+
+You will see TPS (tweets per second) in the output console.
+
+
+To run a merged stream :
+
+java -jar target/twitter-sample-reactive-0.1.jar -c twitter_credentials.yaml single
+
+
+You will see increased TPS
+
+
+
+To run a merged stream with duplicated removed :
+
+java -jar target/twitter-sample-reactive-0.1.jar -c twitter_credentials.yaml single  -dropDuplicates
+
+
+You will see TPS almost the same as single stream.
+
