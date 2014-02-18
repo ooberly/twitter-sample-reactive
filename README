@@ -33,7 +33,7 @@ You will see TPS (tweets per second) in the output console.
 
 To run a merged stream :
 
-java -jar target/twitter-sample-reactive-0.1.jar -c twitter_credentials.yaml single
+java -jar target/twitter-sample-reactive-0.1.jar -c twitter_credentials.yaml merge
 
 
 You will see increased TPS
@@ -42,7 +42,7 @@ You will see increased TPS
 
 To run a merged stream with duplicated removed :
 
-java -jar target/twitter-sample-reactive-0.1.jar -c twitter_credentials.yaml single  -dropDuplicates
+java -jar target/twitter-sample-reactive-0.1.jar -c twitter_credentials.yaml merge  -dropDuplicates
 
 
 You will see TPS almost the same as single stream.
